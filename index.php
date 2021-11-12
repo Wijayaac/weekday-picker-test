@@ -1,6 +1,6 @@
 <?php
 // initialize array of weekdays
-$weekDays[] = new stdClass();
+$weekDays[] = (object)array();
 $weekDays[0]->id = 1;
 $weekDays[0]->name = "Monday";
 $weekDays[1]->id = 2;
@@ -29,13 +29,13 @@ $today = getdate();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekday Picker</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <div class="main">
         <!-- dynamic day -->
-        <p class="text--center">Today is<span class="text--green"><?= $today['weekday'] ?></span></p>
+        <p class="text--center">Today is <span class="text--green"><?= $today['weekday'] ?></span></p>
         <div class="daylist">
             <!-- foreach weekdays -->
             <?php foreach ($weekDays as $day) : ?>
