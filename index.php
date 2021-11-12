@@ -35,17 +35,16 @@ $today = getdate();
 <body>
     <div class="main">
         <!-- dynamic day -->
-        <p class="text--center">Today is<span class="text--green">{today}</span></p>
-
-        <!-- foreach weekdays -->
-        <?php foreach ($weekDays as $day) : ?>
-            <a href="javascript:;" id="list<?= $day->id ?>" class="daylist__item <?= $day->id === $today['wday'] ? "daylist--today" : "" ?>" onclick="checkDay(<?= $day->id ?>)"><?php echo ($day->name); ?></a>
-        <?php endforeach ?>
+        <p class="text--center">Today is<span class="text--green"><?= $today['weekday'] ?></span></p>
+        <div class="daylist">
+            <!-- foreach weekdays -->
+            <?php foreach ($weekDays as $day) : ?>
+                <a href="javascript:;" id="list<?= $day->id ?>" class="daylist__item <?= $day->id === $today['wday'] ? "daylist--today" : "" ?>" onclick="checkDay(<?= $day->id ?>)"><?php echo ($day->name); ?></a>
+            <?php endforeach ?>
+        </div>
         <!-- endforeach -->
         <!-- dynamic selected day -->
-        <p class="text--center">Selected day is <span id="selectedDay" class="text--blue">
-
-            </span></p>
+        <p class="text--center">Selected day is <span class="text--blue" id="selectedDay"></span></p>
     </div>
     <script src="./assets/js/script.js"></script>
 </body>
