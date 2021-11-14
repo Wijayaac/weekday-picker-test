@@ -44,6 +44,7 @@ $today = getdate();
         </div>
         <!-- endforeach -->
         <!-- dynamic selected day -->
+        <!-- test -->
         <p class="text--center">Selected day is <span class="text--blue" id="selectedDay"></span></p>
     </div>
     <script src="./assets/js/script.js"></script>
